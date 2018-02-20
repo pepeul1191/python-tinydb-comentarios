@@ -21,8 +21,26 @@ En caso de usar el servicio en python:
 ## Pruebas de Comportamiento
 
 Ejecutar
-  $ cd test/rspec
-  $ rspec spec comentario_perfil_criador.rb
+
+    $ cd test/rspec
+    $ rspec spec comentario_perfil_criador.rb
+
+### Formato de Dato Grabado : db/criadores.json
+
+    {
+        'criador_id':n,
+        'comentarios': [
+            {
+                criador_id: n, 
+                momento: datetime, 
+                comentario: text
+            },...
+        ]
+    }
+
+### TODO:
+
++ Verificar el tipo de dato a usar en el grabado de dato de momento de un comentario para que sea compatible con javacript.
 
 ### Fuentes:
 

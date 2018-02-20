@@ -17,8 +17,7 @@ def traer(criador_id):
 	try:
 		Criador = Query()
 		tmp = criadores.search(Criador.criador_id == int(criador_id))
-		tmp = tmp[0]
-		return tmp 
+		return tmp[0]
 	except TypeError:
 		rpta = {'tipo_mensaje' : 'error', 'mensaje' : ['Se ha producido un error en crear los comentarios del criador', str(e)]}	
 	return json.dumps(rpta)
