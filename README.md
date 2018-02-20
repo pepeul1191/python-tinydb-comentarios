@@ -28,6 +28,7 @@ Ejecutar
 
 + https://bottlepy.org/docs/dev/
 + http://tinydb.readthedocs.io/en/latest/index.html
++ http://tinydb.readthedocs.io/en/latest/usage.html#document-ids
 + https://buxty.com/b/2013/12/jinja2-templates-and-bottle/
 
 Thanks/Credits
