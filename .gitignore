@@ -2,3 +2,5 @@
 .DS_Store
 Gemfile.lock
 .~lock.data.ods#
+db/criadores.json
+db/mascotas.json

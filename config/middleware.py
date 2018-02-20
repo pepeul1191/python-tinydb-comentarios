@@ -4,6 +4,7 @@ from bottle import response
 def response_headers(fn):
   def _response_headers(*args, **kwargs):
     response.headers['server'] = 'Ubuntu; Python'
+    return fn(*args, **kwargs)
   return _response_headers
 
 def enable_cors(fn):
