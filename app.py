@@ -1,20 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bottle import Bottle, run, HTTPResponse, static_file, hook
+from bottle import Bottle, run, HTTPResponse, static_file
+from config.middleware import response_headers
 
 app = Bottle()
 
-@hook('after_request')
-def enable_cors():
-	response.headers['Access-Control-Allow-Origin'] = '*'
-	response.headers['x-powered-by'] = 'Ubuntu'
-
 @app.route('/')
+@response_headers
 def index():
 	the_body = 'Error : URI vacía'
 	return HTTPResponse(status=404, body=the_body)
 
 @app.route('/test/conexion')
+@response_headers
 def test_conexion():
 	return 'Ok'
 
