@@ -56,5 +56,30 @@ def comentar
   end
 end
 
+def traer
+  RSpec.describe App do
+    describe '3. Traer los comentarios el perfil de un criador: ' do
+      it '3.1 Conexión con backend' do
+        url = 'test/conexion'
+        test = App.new(url)
+        test.get()
+        expect(test.response.code).to eq(200)
+      end
+      it '3.2 Traer los comentarios el perfil de un criador' do
+        data = 1.to_s
+        url = 'criador/traer/' + data
+        test = App.new(url)
+        test.get()
+        puts test.response.body
+        expect(test.response.code).to eq(200)
+        expect(test.response.body).not_to include('error')
+        expect(test.response.body).to include('criador_id')
+        expect(test.response.body).to include('comentarios')
+      end
+    end
+  end
+end
+
 #crear
-comentar
+#comentar
+traer

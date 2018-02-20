@@ -9,6 +9,20 @@ from tinydb import Query
 
 criador_view = Bottle()
 
+@criador_view.route('/traer/<criador_id>', method=['GET'])
+@response_headers
+@enable_cors
+def traer(criador_id):
+	rpta = None
+	try:
+		Criador = Query()
+		tmp = criadores.search(Criador.criador_id == int(criador_id))
+		tmp = tmp[0]
+		return tmp 
+	except TypeError:
+		rpta = {'tipo_mensaje' : 'error', 'mensaje' : ['Se ha producido un error en crear los comentarios del criador', str(e)]}	
+	return json.dumps(rpta)
+
 @criador_view.route('/crear', method=['POST'])
 @response_headers
 @enable_cors
